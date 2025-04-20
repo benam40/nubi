@@ -1,0 +1,12 @@
+type: web
+name: nubi-flask-app
+env: python
+buildCommand: pip install -r requirements.txt
+startCommand: gunicorn app:app
+
+# Optionally, set environment variables
+envVars:
+  - key: FLASK_ENV
+    value: production
+  - key: SECRET_KEY
+    sync: false
